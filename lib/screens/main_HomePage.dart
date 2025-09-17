@@ -39,6 +39,8 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Icon(Icons.logout, color: Colors.white),
           ),
         ],
+        elevation: 0,
+        centerTitle: true,
       ),
 
       floatingActionButton: FloatingActionButton(
@@ -64,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
             if (snapshot.data!.docs.isEmpty) {
               return Center(child: Text("No data found!"));
             }
-            if (snapshot != null && snapshot.data != null) {
+            if (snapshot.data != null) {
               return ListView.builder(
                 itemCount: snapshot.data?.docs.length,
                 itemBuilder: (context, index) {
