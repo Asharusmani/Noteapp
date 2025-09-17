@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class CreateNoteScreen extends StatefulWidget {
   @override
@@ -46,7 +48,10 @@ User? userid = FirebaseAuth.instance.currentUser;
                       "createdAt": DateTime.now(),
                       "note":note,
                       "userid": userid?.uid,
+
+
                     });
+                    Get.back();
 
                   }catch(e){
                     print("Error $e");
